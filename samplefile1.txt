@@ -1,2 +1,3 @@
 This is a sample file
 This is stash lecture, changes in file 1
+This is untracked file
