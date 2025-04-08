@@ -1,2 +1,8 @@
 This is a sample file 2
+<<<<<<< HEAD
 This is compare to the other file 1
+=======
+we are good to go
+let's try new thing
+This is stash lecture, changes in file 2
+>>>>>>> main

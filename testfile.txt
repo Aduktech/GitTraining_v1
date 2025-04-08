@@ -1,5 +1,9 @@
 this file is just a test file.
 my Devops journey
 the journey continue
+<<<<<<< HEAD
 Created a new branch named DevOps
 consistence will help you get there
+=======
+This is stash lecture, changes in file test
+>>>>>>> main
