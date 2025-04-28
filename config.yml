@@ -1,0 +1,16 @@
+# User setting
+user:
+  name: John Doe
+  email: johndoe@example.com
+
+# Database Settings
+database:
+  host: localhost
+  port: 5432
+  uername: myuser
+  password: mypassword
+
+# Application settings
+app:
+  debug: true
+  log_level: INFO
