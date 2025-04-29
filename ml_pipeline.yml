@@ -1,0 +1,33 @@
+# ML Pipeline
+name: ML Pipeline
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout code
+        uses: actions/checkout@v2
+      
+      - name: install dependenies
+        run: |
+          pip install -r requirements.txt
+
+      - name: Train model
+        run: |
+          python train.py
+      
+      - name: Deploy to AWS
+        uses: aws-actions/deploy-to-ec2@v1
+        with:
+          aws-access-key-id: $ {{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: $ {{ secret.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-west-2
+          instance-id: $ {{ secrets.INSTANCE_ID }}
+          script: |
+            sudo docker pull my-ml-image
+            sudo docker run -d -p 8888:8888 my-ml-image
