@@ -1,0 +1,25 @@
+# Users Privileges
+users:
+  - username: admin # Admin user
+    privileges:
+      - create
+      - read
+      - update
+      - delete
+    role: administrator
+  
+  - username: moderator # Moderating user
+    privileges:
+      - read
+      - update
+    role: moderator
+
+  - username: viewer  # This for visitors and viewer
+    privileges:
+      - read
+    role: viewer
+
+  - username: guest  # this for guest
+    privileges:
+      - limited-read
+    role: guest
